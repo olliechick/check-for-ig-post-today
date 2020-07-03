@@ -17,8 +17,6 @@ def main():
     if ENV_SENTRY_DSN in os.environ:
         sentry_sdk.init(os.environ[ENV_SENTRY_DSN])
 
-    raise Exception("test exception 123")
-
     bot = Bot()
     bot.login(username=os.environ[ENV_USERNAME], password=os.environ[ENV_PASSWORD])
     medias = bot.get_total_user_medias(os.environ[ENV_USERNAME_TO_CHECK])
