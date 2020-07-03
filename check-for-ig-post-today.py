@@ -14,9 +14,10 @@ HOURS_IN_DAY = 24
 
 
 def main():
-    raise Exception("test exception 123")
     if ENV_SENTRY_DSN in os.environ:
         sentry_sdk.init(os.environ[ENV_SENTRY_DSN])
+
+    raise Exception("test exception 123")
 
     bot = Bot()
     bot.login(username=os.environ[ENV_USERNAME], password=os.environ[ENV_PASSWORD])
